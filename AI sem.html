@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester Selection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #0d1b2a, #1b263b, #415a77);
+            background-size: 300% 300%;
+            animation: gradientMove 8s infinite alternate ease-in-out;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: left;
+            }
+            100% {
+                background-position: right;
+            }
+        }
+
+        h1 {
+            font-size: 2.2vw;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            max-width: 600px;
+            list-style: none; /* Removes the dots */
+            padding: 0; /* Removes extra space */
+        }
+        
+    
+
+        .semester-btn {
+            width: 100%;
+            height: 100px;
+            background-color: rgba(173, 216, 230, 0.8);
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .semester-btn:hover {
+            background-color: rgba(0, 173, 181, 0.9);
+            transform: translateY(-5px);
+            color: white;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3.5vw;
+            }
+            .semester-btn {
+                font-size: 1.3rem;
+            
+            }
+            .grid-container {
+                width: 80%;
+        }}
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3vw;
+            }
+            .grid-container {
+                width: 60%;
+            }
+            .semester-btn {
+                height: 70px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 3.5vw;
+            }
+            .grid-container {
+                width: 50%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .semester-btn {
+                height: 60px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            position: absolute;
+            bottom: 10px;
+        }
+
+        footer button {
+            padding: 12px 18px;
+            background-color: #43d326;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        footer button:hover {
+            background-color: #36a51e;
+        }
+
+        @media (max-width: 480px) {
+            footer button {
+                font-size: 0.9rem;
+                padding: 10px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Your Semester</h1>
+    <ul class="grid-container">
+        <li><a href="semesters/sem1.html" class="semester-btn">I</a></li>
+        <li><a href="semesters/sem2.html" class="semester-btn">II</a></li>
+        <li><a href="semesters/sem3.html" class="semester-btn">III</a></li>
+        <li><a href="semesters/sem4.html" class="semester-btn">IV</a></li>
+        <li><a href="semesters/sem5.html" class="semester-btn">V</a></li>
+        <li><a href="semesters/sem6.html" class="semester-btn">VI</a></li>
+        <li><a href="semesters/sem7.html" class="semester-btn">VII</a></li>
+        <li><a href="semesters/sem8.html" class="semester-btn">VIII</a></li>
+    </ul>
+
+    <footer>
+        <button onclick="window.history.back()">Go Back</button>
+    </footer>
+</body>
+</html>

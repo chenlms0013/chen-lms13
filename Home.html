@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chendhuran College of Engineering & Technology</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            text-align: center;
+
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            font-size: 2.5vw; /* Responsive font size */
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Align text and logo to the left */
+            position: relative;
+            padding-left: 100px; /* Prevent overlap */
+            height: 100px;
+        }
+        
+        .logo {
+            position: absolute;
+            left: 20px; /* Align to the top left */
+            height: 80px; /* Adjust logo size */
+        }
+        
+        .header-text {
+            margin-left: 100px; /* Add space between logo and text */
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                font-size: 4vw;
+                padding-left: 80px;
+            }
+            .logo {
+                height: 60px;
+            }
+            .header-text {
+                margin-left: 80px; /* Reduce gap on smaller screens */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                font-size: 5vw;
+                padding-left: 60px;
+                text-align: center;
+            }
+            .logo {
+                height: 50px;
+            }
+            .header-text {
+                margin-left: 60px; /* Further reduce gap for mobile */
+            }
+        }
+        
+        
+        .nav {
+            background-color: #34495e;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav a {
+            color: white;
+            margin: 5px 10px;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+        .nav a:hover {
+            background-color: white;
+            color: #34495e;
+            border-radius: 5px;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        
+        .news-box {
+            width: 250px;
+            height: 300px;
+            overflow: hidden;
+            border: 1.4px solid #ccc;
+            padding: 10px;
+            background: white;
+            text-align: left;
+            margin-right: 20px; /* Ensures spacing between news box and images */
+        }
+        
+        .image-container {
+            display: flex;
+            flex-direction: column; /* Stack images vertically */
+            align-items: center;
+            gap: 10px; /* Adds space between images */
+        }
+        
+        .news-content {
+            position: relative;
+            animation: scrollNews 10s linear infinite;
+        }
+        @keyframes scrollNews {
+            0% { top: 100%; opacity: 1; }
+            90% { top: 0%; opacity: 1; }
+            100% { top: 0%; opacity: 0; }
+        }
+        .image-container {
+            margin: 20px auto;
+            max-width: 500px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            position: relative;
+        }
+        .column-layout {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .column {
+            width: 45%;
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            text-align: justify;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .embed-container {
+            width: 100%;
+            height: 400px;
+        }
+        @media (max-width: 768px) {
+            .column {
+                width: 90%;
+
+            
+            }
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        .container {
+            max-width: 1800px;
+            margin: auto;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #2d4f72;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .gradient-text {
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            text-align: center;
+            background: linear-gradient(45deg, #3336ff, #e733ff, #4b0155, #3357ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                height: auto;
+                padding: 10px 0;
+            }
+        
+            .logo {
+                position: static; /* Removes absolute positioning */
+                margin-bottom: 10px; /* Adds spacing between logo and text */
+            }
+        
+            .header-text {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                font-size: 6vw;
+                padding: 10px 0;
+            }
+        
+            .logo {
+                height: 60px; /* Adjust size for smaller screens */
+            }
+        
+            .header-text {
+                font-size: 4vw; /* Adjust text size for smaller screens */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="croped.png" alt="College Logo" class="logo">
+        <span class="header-text">Chendhuran College of Engineering & Technology</span>
+    </div>
+    
+    
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="AI sem.html">AI&DS</a>
+        <a href="gpa.html">GPA Calculator</a>
+        <a href="Question banks.html">Question Banks</a>
+        <a href="academic_schedules.html">Academic Examinations</a>
+        <a href="about.html">About</a>
+        <a href="Info.html">Info</a>
+
+        
+      
+    </div>
+    <div class="content-wrapper">
+        <div class="news-box">
+            <h3>Latest News</h3>
+            <div class="news-content">
+                <p>- Admissions Open for 2025 Batch</p>
+                <p>- AI&DS Workshop on February 15th</p>
+                <p>- Placement Drive for Final Year Students</p>
+                <p>- Annual Sports Meet Announced</p>
+                <p>- New Research Lab Inaugurated</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="img_2926039_2025_02_05_21_03_23.png" width="400" height="200" alt="Image">
+            <h2 class="gradient-text">LEARNING MANAGEMENT SYSTEM</h2>
+        </div>
+    </div>
+    
+    
+    <div class="column-layout">
+        <div class="column">
+            <h2>Recently Uploaded Materials</h2>
+            <iframe class="embed-container" src="https://drive.google.com/embeddedfolderview?id=1ccpMkhVrg6JpqsxS99DUQvuEfDKwHSf9#grid"></iframe>
+        </div>
+        <div class="column">
+            <h2>Question Papers</h2>
+            <iframe class="embed-container" src="https://drive.google.com/embeddedfolderview?id=15cQx0qTrlaasdJCnl9dl6tpWkvWxb7e3#grid"></iframe>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Artificial Intelligence & Data Science (AI & DS)</h1>
+        <div class="column-layout">
+            <div class="column">
+                <h2>Scope of AI & DS</h2>
+                <h3>1) Healthcare 🏥</h3>
+                <ul>
+                    <li>✅ Disease prediction and diagnosis</li>
+                    <li>✅ Personalized medicine</li>
+                    <li>✅ Medical imaging and robotics</li>
+                </ul>
+                <h3>2) Finance & Banking 💰</h3>
+                <ul>
+                    <li>✅ Fraud detection</li>
+                    <li>✅ Algorithmic trading</li>
+                    <li>✅ Risk management</li>
+                </ul>
+                <h3>3) Retail & E-commerce 🛒</h3>
+                <ul>
+                    <li>✅ Recommendation systems</li>
+                    <li>✅ Customer sentiment analysis</li>
+                    <li>✅ Chatbots for customer service</li>
+                </ul>
+                <h3>4) Autonomous Systems 🚗</h3>
+                <ul>
+                    <li>✅ Self-driving cars</li>
+                    <li>✅ Smart drones</li>
+                    <li>✅ Robotics</li>
+                </ul>
+                <h3>5) Cybersecurity 🔒</h3>
+                <ul>
+                    <li>✅ Threat detection</li>
+                    <li>✅ Biometric authentication</li>
+                    <li>✅ AI-driven security solutions</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Career Opportunities in AI & DS</h2>
+                <h3>1) Data Scientist</h3>
+                <ul>
+                    <li>✅ Analyzing large datasets</li>
+                    <li>✅ Machine learning model development</li>
+                </ul>
+                <h3>2) AI Engineer</h3>
+                <ul>
+                    <li>✅ Building intelligent AI systems</li>
+                    <li>✅ Deep learning and neural networks</li>
+                </ul>
+                <h3>3) Business Intelligence Analyst</h3>
+                <ul>
+                    <li>✅ Data-driven business decision making</li>
+                    <li>✅ Market analysis</li>
+                </ul>
+                <h3>4) Cybersecurity Analyst</h3>
+                <ul>
+                    <li>✅ AI-powered security solutions</li>
+                    <li>✅ Preventing cyber threats</li>
+                </ul>
+                <h3>5) AI Researcher</h3>
+                <ul>
+                    <li>✅ Developing new AI techniques</li>
+                    <li>✅ Advancing deep learning algorithms</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .container {
+            text-align: center;
+            max-width:1800px;
+        }
+        .column-layout {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px auto;
+            max-width: 80%;
+        }
+        .column {
+            flex: 1; /* Ensures both columns expand equally */
+            max-width: 880px; /* Adjust width to fit within 1800px */
+            background: white;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+        }
+        @media (max-width: 768px) {
+            .column-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+            .column {
+                width: 90%;
+            }
+        }
+    </style>
+    
+    
+    <div class="footer">
+        <div>
+            <p>&copy; 2025 Chendhuran College of Engineering & Technology. All rights reserved.</p>
+        </div>
+        <div>
+            <p>Contact: +91 7373755574 | Email: admin@chendhuran.in</p>
+            <br><p>Created by 2nd year student</p>
+        </div>
+    </div>
+</body>
+<a href="#top" style="display: inline-block; padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; position: fixed; bottom: 60px; right: 20px; cursor: pointer;">Back to Top</a>
+
+
+
+</html>
